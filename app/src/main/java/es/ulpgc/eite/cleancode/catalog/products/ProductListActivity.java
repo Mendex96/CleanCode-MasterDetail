@@ -34,7 +34,6 @@ public class ProductListActivity
     // Show the title in the action bar
     ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
-      actionBar.setDisplayHomeAsUpEnabled(true);
       actionBar.setTitle(getString(R.string.title_product_list));
     }
 
