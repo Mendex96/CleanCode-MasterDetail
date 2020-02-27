@@ -8,6 +8,7 @@ import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 import es.ulpgc.eite.cleancode.catalog.product.ProductDetailActivity;
 
 
+
 public class ProductListRouter implements ProductListContract.Router {
 
   public static String TAG = ProductListRouter.class.getSimpleName();
@@ -23,6 +24,7 @@ public class ProductListRouter implements ProductListContract.Router {
   public void navigateToProductDetailScreen() {
     Context context = mediator.getApplicationContext();
     Intent intent = new Intent(context, ProductDetailActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }
 

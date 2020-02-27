@@ -2,12 +2,13 @@ package es.ulpgc.eite.cleancode.catalog.product;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import es.ulpgc.eite.cleancode.catalog.R;
 import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
@@ -26,6 +27,7 @@ public class ProductDetailActivity
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_product_detail);
+
     Toolbar toolbar = findViewById(R.id.detail_toolbar);
     setSupportActionBar(toolbar);
 
