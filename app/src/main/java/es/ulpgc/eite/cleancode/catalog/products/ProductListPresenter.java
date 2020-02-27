@@ -10,12 +10,12 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   public static String TAG = ProductListPresenter.class.getSimpleName();
 
   private WeakReference<ProductListContract.View> view;
-  private ProductListViewModel viewModel;
+  private ProductListState state;
   private ProductListContract.Model model;
   private ProductListContract.Router router;
 
   public ProductListPresenter(ProductListState state) {
-    viewModel = state;
+    this.state = state;
   }
 
   @Override
@@ -38,9 +38,9 @@ public class ProductListPresenter implements ProductListContract.Presenter {
     // Log.e(TAG, "fetchProductListData()");
 
     // call the model
-    viewModel.products = model.fetchProductListData();
+    state.products = model.fetchProductListData();
 
-    view.get().displayProductListData(viewModel);
+    view.get().displayProductListData(state);
 
   }
 
