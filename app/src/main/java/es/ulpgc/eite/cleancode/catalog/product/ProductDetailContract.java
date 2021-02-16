@@ -2,8 +2,6 @@ package es.ulpgc.eite.cleancode.catalog.product;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
-
 interface ProductDetailContract {
 
   interface View {
@@ -14,10 +12,8 @@ interface ProductDetailContract {
 
   interface Presenter {
     void injectView(WeakReference<View> view);
-
     void injectModel(Model model);
-
-    void injectRouter(Router router);
+    //void injectRouter(Router router);
 
     void fetchProductDetailData();
   }
@@ -26,8 +22,8 @@ interface ProductDetailContract {
 
   }
 
-  interface Router {
-
-    ProductItem getDataFromProductListScreen();
-  }
+//  interface Router {
+//
+//    ProductItem getDataFromProductListScreen();
+//  }
 }

@@ -1,16 +1,34 @@
 package es.ulpgc.eite.cleancode.catalog.app;
 
-import android.app.Application;
-
 import es.ulpgc.eite.cleancode.catalog.product.ProductDetailState;
 import es.ulpgc.eite.cleancode.catalog.products.ProductListState;
 
-public class CatalogMediator extends Application {
+public class CatalogMediator {
 
   private ProductListState productListState = new ProductListState();
   private ProductDetailState productDetailState = new ProductDetailState();
 
   private ProductItem product;
+
+
+  private static CatalogMediator INSTANCE;
+
+  private CatalogMediator() {
+
+  }
+
+  public static void resetInstance() {
+    INSTANCE = null;
+  }
+
+
+  public static CatalogMediator getInstance() {
+    if(INSTANCE ==null){
+      INSTANCE = new CatalogMediator();
+    }
+
+    return INSTANCE;
+  }
 
 
   public ProductListState getProductListState() {
