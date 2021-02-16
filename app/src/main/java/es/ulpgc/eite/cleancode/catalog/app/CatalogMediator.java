@@ -23,7 +23,7 @@ public class CatalogMediator {
 
 
   public static CatalogMediator getInstance() {
-    if(INSTANCE ==null){
+    if(INSTANCE == null){
       INSTANCE = new CatalogMediator();
     }
 
