@@ -13,4 +13,5 @@
         android:layout_margin="@dimen/text_margin"
         style="?android:attr/textAppearanceLarge"
         tools:text="@string/item_content"/>
+
 </LinearLayout>
