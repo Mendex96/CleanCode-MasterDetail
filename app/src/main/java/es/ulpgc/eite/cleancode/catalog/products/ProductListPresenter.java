@@ -27,6 +27,7 @@ public class ProductListPresenter implements ProductListContract.Presenter {
 //    this.state = state;
 //  }
 
+
   @Override
   public void injectView(WeakReference<ProductListContract.View> view) {
     this.view = view;
@@ -52,7 +53,9 @@ public class ProductListPresenter implements ProductListContract.Presenter {
     CategoryItem product = getDataFromProductListScreen();
     //ProductItem product = router.getDataFromProductListScreen();
     if (product != null) {
-      state.products = product;
+     // state.products = product;
+     state.number = product.id;
+
     }
     // call the model
     state.products = model.fetchProductListData();

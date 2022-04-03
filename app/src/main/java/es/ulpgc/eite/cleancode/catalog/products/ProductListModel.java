@@ -5,6 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.ulpgc.eite.cleancode.catalog.app.CategoryItem;
 import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 
 public class ProductListModel implements ProductListContract.Model {
@@ -17,7 +18,7 @@ public class ProductListModel implements ProductListContract.Model {
   public ProductListModel() {
     // Add some sample items
     for (int index = 1; index <= COUNT; index++) {
-      addProduct(createProduct(index ,1));
+      addProduct(createProduct(index,2));
     }
   }
 
@@ -27,23 +28,30 @@ public class ProductListModel implements ProductListContract.Model {
     return itemList;
   }
 
+  @Override
+  public void addCategory(int category){
+    for (int index = 1; index <= COUNT; index++) {
+      itemList.get(index);
+    }
+  }
+
   private void addProduct(ProductItem item) {
     itemList.add(item);
   }
 
 
-  private ProductItem createProduct(int position, int number) {
-    String content = "Product " + number+ "."+position;
+  private ProductItem createProduct(int position, int category) {
+    String content = "Product " + category+"." +position;
 
     return new ProductItem(
-        position, content, fetchProductDetails(position)
+        position, content, fetchProductDetails(position,category)
     );
 
   }
 
 
-  private String fetchProductDetails(int position) {
-    String content = "Details about Product:  " + position;
+  private String fetchProductDetails(int position,int category) {
+    String content = "Details about Product:  " + category +"."+position ;
     StringBuilder builder = new StringBuilder();
     builder.append(content);
 

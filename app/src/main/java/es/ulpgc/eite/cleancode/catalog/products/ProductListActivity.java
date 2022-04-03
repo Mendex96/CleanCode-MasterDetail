@@ -38,6 +38,7 @@ public class ProductListActivity
     ActionBar actionBar = getSupportActionBar();
     if (actionBar != null) {
       actionBar.setTitle(getString(R.string.title_product_list));
+      actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     listView = findViewById(R.id.product_list);
