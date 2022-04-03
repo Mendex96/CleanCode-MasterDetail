@@ -17,7 +17,7 @@ public class ProductListModel implements ProductListContract.Model {
   public ProductListModel() {
     // Add some sample items
     for (int index = 1; index <= COUNT; index++) {
-      addProduct(createProduct(index));
+      addProduct(createProduct(index ,1));
     }
   }
 
@@ -32,8 +32,8 @@ public class ProductListModel implements ProductListContract.Model {
   }
 
 
-  private ProductItem createProduct(int position) {
-    String content = "Product " + position;
+  private ProductItem createProduct(int position, int number) {
+    String content = "Product " + number+ "."+position;
 
     return new ProductItem(
         position, content, fetchProductDetails(position)

@@ -6,6 +6,7 @@ public class CategoryItem {
     public final String content;
     public final String details;
 
+
     public CategoryItem(int id, String content, String details) {
         this.id = id;
         this.content = content;

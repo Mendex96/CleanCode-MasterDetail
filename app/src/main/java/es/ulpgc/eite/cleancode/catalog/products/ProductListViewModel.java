@@ -2,6 +2,7 @@ package es.ulpgc.eite.cleancode.catalog.products;
 
 import java.util.List;
 
+import es.ulpgc.eite.cleancode.catalog.app.CategoryItem;
 import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 
 public class ProductListViewModel {

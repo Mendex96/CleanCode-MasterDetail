@@ -3,6 +3,7 @@ package es.ulpgc.eite.cleancode.catalog.products;
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.catalog.app.CatalogMediator;
+import es.ulpgc.eite.cleancode.catalog.app.CategoryItem;
 import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
 
 
@@ -48,7 +49,11 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   @Override
   public void fetchProductListData() {
     // Log.e(TAG, "fetchProductListData()");
-
+    CategoryItem product = getDataFromProductListScreen();
+    //ProductItem product = router.getDataFromProductListScreen();
+    if (product != null) {
+      state.products = product;
+    }
     // call the model
     state.products = model.fetchProductListData();
 
@@ -56,6 +61,10 @@ public class ProductListPresenter implements ProductListContract.Presenter {
 
   }
 
+  private CategoryItem getDataFromProductListScreen() {
+    CategoryItem product = mediator.getCategory();
+    return product;
+  }
 
   @Override
   public void selectProductListData(ProductItem item) {

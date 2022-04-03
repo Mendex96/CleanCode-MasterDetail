@@ -3,22 +3,19 @@ package es.ulpgc.eite.cleancode.catalog.Category;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
 import es.ulpgc.eite.cleancode.catalog.R;
 import es.ulpgc.eite.cleancode.catalog.app.CategoryItem;
-import es.ulpgc.eite.cleancode.catalog.app.ProductItem;
-import es.ulpgc.eite.cleancode.catalog.product.ProductDetailActivity;
 import es.ulpgc.eite.cleancode.catalog.products.ProductListActivity;
-import es.ulpgc.eite.cleancode.catalog.products.ProductListAdapter;
-import es.ulpgc.eite.cleancode.catalog.products.ProductListScreen;
-import es.ulpgc.eite.cleancode.catalog.products.ProductListViewModel;
 
 public class CategoryListActivity
         extends AppCompatActivity implements CategoryListContract.View {
@@ -98,7 +95,15 @@ public class CategoryListActivity
 
     }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void navigateToProductListScreen() {

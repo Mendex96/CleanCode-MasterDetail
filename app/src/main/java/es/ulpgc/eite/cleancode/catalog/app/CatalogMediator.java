@@ -46,7 +46,12 @@ public class CatalogMediator {
 
   public ProductItem getProduct() {
     ProductItem item = product;
-    //product = null;
+    product = null;
+    return item;
+  }
+  public CategoryItem getCategory() {
+    CategoryItem item = category;
+    category = null;
     return item;
   }
 

@@ -20,11 +20,15 @@
         </activity>
         <activity
             android:name=".product.ProductDetailActivity"
-            android:parentActivityName=".products.ProductListActivity"
+            android:parentActivityName=".Category.CategoryListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="es.ulpgc.eite.cleancode.catalog.products.ProductListActivity"/>
+                android:value="es.ulpgc.eite.cleancode.catalog.Category.CategoryListActivity"/>
+        </activity>
+        <activity
+            android:name=".products.ProductListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

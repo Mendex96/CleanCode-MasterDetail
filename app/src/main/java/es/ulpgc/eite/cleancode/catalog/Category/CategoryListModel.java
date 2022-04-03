@@ -35,7 +35,7 @@ public class CategoryListModel implements CategoryListContract.Model {
     }
 
     private CategoryItem createProduct(int position) {
-        String content = "Product " + position;
+        String content = "Category " + position;
 
         return new CategoryItem(
                 position, content, fetchCategoryDetails(position)
