@@ -6,7 +6,7 @@ interface ProductDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
-    void modifyTitle(int number);
+    void modifyTitle(String content);
 
 
     void displayProductDetailData(ProductDetailViewModel viewModel);

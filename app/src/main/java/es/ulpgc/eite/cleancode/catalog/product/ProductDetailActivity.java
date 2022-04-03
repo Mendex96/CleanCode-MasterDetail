@@ -86,9 +86,9 @@ public class ProductDetailActivity
     return super.onOptionsItemSelected(item);
   }
   @Override
-  public void modifyTitle(int number){
+  public void modifyTitle(String content){
     ActionBar actionBar = getSupportActionBar();
-    actionBar.setTitle(getString(R.string.title_product_detail)+ " " + number);
+    actionBar.setTitle(content);
 
   }
 }
