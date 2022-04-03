@@ -53,15 +53,30 @@ public class ProductListPresenter implements ProductListContract.Presenter {
     CategoryItem product = getDataFromProductListScreen();
     //ProductItem product = router.getDataFromProductListScreen();
     if (product != null) {
-     // state.products = product;
+     //state.products = product;
      state.number = product.id;
-
+     view.get().modifyTitle(state.number);
     }
     // call the model
     state.products = model.fetchProductListData();
 
     view.get().displayProductListData(state);
 
+  }
+
+  @Override
+  public void onStart() {
+  }
+
+  @Override
+  public void onRestart() {
+    view.get().modifyTitle(state.number);
+
+  }
+
+  @Override
+  public void onResume() {
+    view.get().modifyTitle(state.number);
   }
 
   private CategoryItem getDataFromProductListScreen() {

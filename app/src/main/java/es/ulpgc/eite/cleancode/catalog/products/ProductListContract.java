@@ -13,15 +13,20 @@ interface ProductListContract {
     void displayProductListData(ProductListViewModel viewModel);
 
     void navigateToProductDetailScreen();
+    void modifyTitle(int number);
+
   }
 
   interface Presenter {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
     //void injectRouter(Router router);
-
+    void onStart();
+    void onRestart();
+    void onResume();
     void fetchProductListData();
     void selectProductListData(ProductItem item);
+
   }
 
   interface Model {

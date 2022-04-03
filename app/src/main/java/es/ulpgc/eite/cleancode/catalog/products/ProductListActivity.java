@@ -54,9 +54,26 @@ public class ProductListActivity
 
     // do some work
     presenter.fetchProductListData();
+    if(savedInstanceState == null) {
+      presenter.onStart();
+
+    } else {
+      presenter.onRestart();
+    }
   }
 
+  @Override
+  public void modifyTitle(int number){
+    ActionBar actionBar = getSupportActionBar();
+    actionBar.setTitle(getString(R.string.title_product_list)+ " " + number);
+  }
+  @Override
+  protected void onResume() {
+    super.onResume();
 
+    // load the answer
+    presenter.onResume();
+  }
   @Override
   public void navigateToProductDetailScreen() {
     Intent intent = new Intent(this, ProductDetailActivity.class);
