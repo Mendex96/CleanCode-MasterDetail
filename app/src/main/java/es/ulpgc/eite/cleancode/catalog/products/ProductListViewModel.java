@@ -9,7 +9,5 @@ public class ProductListViewModel {
 
   public List<ProductItem> products;
   public int number;
-
-
 }
 

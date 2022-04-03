@@ -43,7 +43,21 @@ public class ProductDetailActivity
 
     // do some work
     presenter.fetchProductDetailData();
+    if(savedInstanceState == null) {
+      presenter.onStart();
+
+    } else {
+      presenter.onRestart();
+    }
   }
+  @Override
+  protected void onResume() {
+    super.onResume();
+
+    // load the answer
+    presenter.onResume();
+  }
+
 
   @Override
   public void injectPresenter(ProductDetailContract.Presenter presenter) {
@@ -70,5 +84,11 @@ public class ProductDetailActivity
       return true;
     }
     return super.onOptionsItemSelected(item);
+  }
+  @Override
+  public void modifyTitle(int number){
+    ActionBar actionBar = getSupportActionBar();
+    actionBar.setTitle(getString(R.string.title_product_detail)+ " " + number);
+
   }
 }

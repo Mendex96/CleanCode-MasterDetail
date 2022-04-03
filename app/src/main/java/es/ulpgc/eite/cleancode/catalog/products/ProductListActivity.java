@@ -74,6 +74,7 @@ public class ProductListActivity
     // load the answer
     presenter.onResume();
   }
+
   @Override
   public void navigateToProductDetailScreen() {
     Intent intent = new Intent(this, ProductDetailActivity.class);

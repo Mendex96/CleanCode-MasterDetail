@@ -6,6 +6,8 @@ interface ProductDetailContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
+    void modifyTitle(int number);
+
 
     void displayProductDetailData(ProductDetailViewModel viewModel);
   }
@@ -14,6 +16,9 @@ interface ProductDetailContract {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
     //void injectRouter(Router router);
+    void onStart();
+    void onRestart();
+    void onResume();
 
     void fetchProductDetailData();
   }

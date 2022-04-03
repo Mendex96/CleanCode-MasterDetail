@@ -46,6 +46,21 @@ public class ProductDetailPresenter implements ProductDetailContract.Presenter {
   }
 
   @Override
+  public void onStart() {
+  }
+
+  @Override
+  public void onRestart() {
+    view.get().modifyTitle(state.product.id);
+
+  }
+
+  @Override
+  public void onResume() {
+    view.get().modifyTitle(state.product.id);
+  }
+
+  @Override
   public void fetchProductDetailData() {
     // Log.e(TAG, "fetchProductDetailData()");
 
@@ -54,6 +69,7 @@ public class ProductDetailPresenter implements ProductDetailContract.Presenter {
     //ProductItem product = router.getDataFromProductListScreen();
     if (product != null) {
       state.product = product;
+      view.get().modifyTitle(state.product.id);
     }
 
     view.get().displayProductDetailData(state);

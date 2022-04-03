@@ -18,7 +18,7 @@ public class ProductListModel implements ProductListContract.Model {
   public ProductListModel() {
     // Add some sample items
     for (int index = 1; index <= COUNT; index++) {
-      addProduct(createProduct(index,2));
+      addProduct(createProduct(index));
     }
   }
 
@@ -28,30 +28,31 @@ public class ProductListModel implements ProductListContract.Model {
     return itemList;
   }
 
-  @Override
-  public void addCategory(int category){
-    for (int index = 1; index <= COUNT; index++) {
-      itemList.get(index);
-    }
-  }
-
   private void addProduct(ProductItem item) {
     itemList.add(item);
   }
 
+  @Override
+  public void modifyCategory(int category) {
+    for (int index = 0; index < COUNT; index++) {
+      itemList.get(index).content = "Product "+ category + "." + (index+1);
+    }
 
-  private ProductItem createProduct(int position, int category) {
-    String content = "Product " + category+"." +position;
+  }
+
+  private ProductItem createProduct(int position) {
+    String content = "Product " + "." +position;
 
     return new ProductItem(
-        position, content, fetchProductDetails(position,category)
+        position, content, fetchProductDetails(position)
     );
 
   }
 
 
-  private String fetchProductDetails(int position,int category) {
-    String content = "Details about Product:  " + category +"."+position ;
+
+  private String fetchProductDetails(int position) {
+    String content = "Details about Product:  " +"."+position ;
     StringBuilder builder = new StringBuilder();
     builder.append(content);
 
