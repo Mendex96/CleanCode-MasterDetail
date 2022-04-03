@@ -59,6 +59,7 @@ public class ProductListPresenter implements ProductListContract.Presenter {
      state.number = product.id;
      view.get().modifyTitle(state.number);
      model.modifyCategory(state.number);
+      model.modifyInfo(state.number);
     }
     // call the model
     state.products = model.fetchProductListData();
@@ -74,6 +75,7 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   public void onRestart() {
     view.get().modifyTitle(state.number);
     model.modifyCategory(state.number);
+    model.modifyInfo(state.number);
     state.products = model.fetchProductListData();
     view.get().displayProductListData(state);
 
@@ -83,6 +85,7 @@ public class ProductListPresenter implements ProductListContract.Presenter {
   public void onResume() {
     view.get().modifyTitle(state.number);
     model.modifyCategory(state.number);
+    model.modifyInfo(state.number);
     state.products = model.fetchProductListData();
     view.get().displayProductListData(state);
   }

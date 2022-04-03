@@ -6,7 +6,7 @@ public class ProductItem {
   public final int id;
 
   public String content;
-  public final String details;
+  public String details;
 
   public ProductItem(int id,String content, String details) {
     this.id = id;

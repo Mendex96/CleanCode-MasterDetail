@@ -32,6 +32,7 @@ interface ProductListContract {
   interface Model {
     List<ProductItem> fetchProductListData();
     void modifyCategory(int category);
+    void modifyInfo(int category);
   }
 
 //  interface Router {

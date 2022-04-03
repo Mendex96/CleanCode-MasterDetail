@@ -44,15 +44,20 @@ public class ProductListModel implements ProductListContract.Model {
     String content = "Product " + "." +position;
 
     return new ProductItem(
-        position, content, fetchProductDetails(position)
+        position, content, fetchProductDetails("0.0",position)
     );
+  }
+
+  @Override
+  public void modifyInfo(int category) {
+    for (int index = 0; index < COUNT; index++) {
+      itemList.get(index).details=fetchProductDetails((category+"."+(index+1)),(index+1));
+    }
 
   }
 
-
-
-  private String fetchProductDetails(int position) {
-    String content = "Details about Product:  " +"."+position ;
+  private String fetchProductDetails(String info,int position) {
+    String content = "Details about Product:  " + info;
     StringBuilder builder = new StringBuilder();
     builder.append(content);
 
